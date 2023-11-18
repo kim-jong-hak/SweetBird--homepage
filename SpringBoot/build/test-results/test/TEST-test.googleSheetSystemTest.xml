@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.googleSheetSystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-18T06:42:36" hostname="gimjonghag-ui-MacBookAir.local" time="2.925">
+<testsuite name="test.googleSheetSystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-18T07:52:07" hostname="gimjonghag-ui-MacBookAir.local" time="2.015">
   <properties/>
-  <testcase name="googleSheet_api_검증" classname="test.googleSheetSystemTest" time="2.925"/>
-  <system-out><![CDATA[sheet 출력!
-sheet 출력!
+  <testcase name="googleSheet_api_검증" classname="test.googleSheetSystemTest" time="2.015"/>
+  <system-out><![CDATA[sweet
+1234!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

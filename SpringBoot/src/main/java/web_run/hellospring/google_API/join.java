@@ -15,13 +15,13 @@ import static web_run.hellospring.google_API.SheetsQuickstart.*;
 public class join {
 
     public static String[] main() throws IOException, GeneralSecurityException {
-          String[] output={"에러","에러","에러"};
+          String[] output={"에러","에러",};
 
 
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         final String spreadsheetId = "14BcWtVuLawmtyw4QOYQkkL5hAEhFbwJfPDNvsiHyDFQ";
-        final String range = "sing!B4:D4";
+        final String range = "sing!B4:C4";
         Sheets service =
                 new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                         .setApplicationName(APPLICATION_NAME)
@@ -33,13 +33,13 @@ public class join {
         if (values == null || values.isEmpty()) {
             System.out.println("No data found.");
         } else {
-            System.out.println("sheet 출력!");
+
             for (List row : values) {
                 // Print columns A and E, which correspond to indices 0 and 4.
 
                 output[0]= row.get(0).toString();
                 output[1]=row.get(1).toString();
-                output[2]= row.get(2).toString();
+
             }
         }
         return output;

@@ -2,10 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>로그인</title>
-  <h1>여기는 로그인 </h1>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
 </head>
 <body>
+
+<h2>Login Page</h2>
+
+<label for="userId">ID:</label>
+<input type="text" id="userId" name="userId" placeholder="Enter your ID">
+
+<label for="userPassword">Password:</label>
+<input type="password" id="userPassword" name="userPassword" placeholder="Enter your Password">
+
+<button onclick="sendJson()">Login</button>
+
+<script>
+    function sendJson() {
+        // 입력된 ID와 Password 값을 가져옴
+        var userId = document.getElementById("userId").value;
+        var userPassword = document.getElementById("userPassword").value;
+
+        // JSON 데이터 생성
+        var jsonData = {
+            "Id": userId,
+            "Password": userPassword
+        };
+
+        // AJAX를 사용하여 JSON 데이터를 서버로 전송
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/new/member?Id=" + userId + "&Password=" + userPassword, true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 서버로부터의 응답을 처리
+                console.log(xhr.responseText);
+
+                // 여기서 받은 응답을 URL로 간주하여 접속
+                var responseUrl = xhr.responseText;
+                window.location.href = responseUrl;
+            }
+        };
+        xhr.send(JSON.stringify(jsonData));
+    }
+</script>
 
 </body>
 </html>

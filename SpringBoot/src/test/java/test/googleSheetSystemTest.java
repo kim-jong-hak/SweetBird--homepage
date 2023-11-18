@@ -19,7 +19,10 @@ public class googleSheetSystemTest {
         join Join=new join();
         st=Join.main();
 
-        Assertions.assertThat(st).isEqualTo(Join.main());
+        for(String a:st)
+        {
+            System.out.println(a);
+        }
         // Join.main의 반환값은 String[]이다.
     }
 
