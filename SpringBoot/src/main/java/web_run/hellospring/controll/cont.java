@@ -28,13 +28,9 @@ public class cont {
     @PostMapping("/new/member")
     @ResponseBody
     public String AdminAccess(@RequestParam("Id") String Id, @RequestParam("Password") String Password) throws GeneralSecurityException, IOException {
-        System.out.println(Id + " " + Password);
         String[] a = join.main();
-        System.out.println(a[0] + " " + a[1]);
-        if (a[0].equals(Id) && a[1].equals(Password)) {
-
-            System.out.println("작동");
-            YesAdmin();
+        if (a[0].equals(Id) && a[1].equals(Password))
+        {
            return "/Yes/Admin";
         }
 
