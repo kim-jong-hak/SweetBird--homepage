@@ -1,0 +1,23 @@
+{% extends "board/index.html" %}
+{% load static %}
+
+{% block board_list %}
+
+<html>
+    <head>
+        <title>게시판 목록</title>
+    </head>
+    <body>
+        <h1>게시판 목록 페이지입니다</h1>
+        <a href="/board/write/">글쓰기</a>
+        <table>
+        {% for list in board_list %}
+            <ul>
+                <li><a href="../view/{{list.board_id}}/">{{list.board_id}} | {{list.board_name}}</a></li>
+            </ul>
+        {% endfor %}
+        </table>
+    </body>
+</html>
+
+{% endblock board_list %}

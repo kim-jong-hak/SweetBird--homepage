@@ -1,0 +1,15 @@
+{% extends "board/index.html" %}
+{% load static %}
+
+{% block board_write %}
+
+<form method="POST">
+    {% csrf_token %}
+    제목<br>
+    <input type="text" name="board_name"><br>
+    내용<br>
+    <textarea rows="10" cols="50" name="contents"></textarea><br>
+    <input type="submit" value="글쓰기">
+</form>
+
+{% endblock board_write %}

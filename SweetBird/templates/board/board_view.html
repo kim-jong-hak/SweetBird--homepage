@@ -1,0 +1,23 @@
+{% extends "board/index.html" %}
+{% load static %}
+
+{% block board_view %}
+
+
+<h1>게시판 세부 페이지입니다</h1>
+
+<div>
+    user id: {{board.user_id}}
+    <br>
+    board id: {{board.board_id}}
+    <br>
+    board name: {{board.board_name}}
+    <br>
+    board content: {{board.contents}}
+    <br>
+</div>
+
+<a href="/board/list/">목록</a>
+
+
+{% endblock board_view %}
