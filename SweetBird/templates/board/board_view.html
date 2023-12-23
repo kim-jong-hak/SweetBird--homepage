@@ -1,4 +1,4 @@
-{% extends "board/index.html" %}
+<!--{% extends "board/index.html" %}
 {% load static %}
 
 {% block board_view %}
@@ -17,7 +17,36 @@
     <br>
 </div>
 
-<a href="/board/list/">목록</a>
+<a href="/board/list/">목록</a> -->
 
+
+{% endblock board_view %}
+
+{% extends "board/index.html" %}
+{% load static %}
+
+{% block board_view %}
+
+<html>
+<head>
+    <title>게시판 세부 페이지</title>
+    <link rel="stylesheet" href="css/view_css.css">
+</head>
+<body>
+    <div class="container">
+        <h1>게시판 세부 페이지입니다</h1>
+
+        <div class="info-box">
+            <p>user id: {{board.user_id}}</p>
+            <p>board id: {{board.board_id}}</p>
+            <p>board name: {{board.board_name}}</p>
+            <p>board content: {{board.contents}}</p>
+        </div>
+
+        <a href="/board/list/" class="back-link">목록</a>
+    </div>
+
+</body>
+</html>
 
 {% endblock board_view %}

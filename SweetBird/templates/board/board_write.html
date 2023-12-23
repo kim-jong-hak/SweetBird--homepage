@@ -1,4 +1,4 @@
-{% extends "board/index.html" %}
+<!--{% extends "board/index.html" %}
 {% load static %}
 
 {% block board_write %}
@@ -11,5 +11,33 @@
     <textarea rows="10" cols="50" name="contents"></textarea><br>
     <input type="submit" value="글쓰기">
 </form>
+
+{% endblock board_write %}-->
+
+{% extends "board/index.html" %}
+{% load static %}
+
+{% block board_write %}
+
+<html>
+<head>
+    <title>게시판 글쓰기 페이지</title>
+    <link rel="stylesheet" href="css/write.css">
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <label for="board_name">제목</label>
+            <input type="text" name="board_name" id="board_name">
+            <br>
+            <label for="contents">내용</label><br>
+            <textarea rows="10" cols="50" name="contents" id="contents"></textarea>
+
+            <input type="submit" value="글쓰기">
+        </form>
+    </div>
+</body>
+</html>
 
 {% endblock board_write %}
