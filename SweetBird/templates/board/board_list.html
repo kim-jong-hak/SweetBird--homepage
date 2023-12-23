@@ -4,20 +4,24 @@
 {% block board_list %}
 
 <html>
-    <head>
-        <title>게시판 목록</title>
-    </head>
-    <body>
+<head>
+    <title>게시판 목록</title>
+    <link rel="stylesheet" href="css/list_css.css">
+    
+</head>
+<body>
+    <div class="container">
         <h1>게시판 목록 페이지입니다</h1>
-        <a href="/board/write/">글쓰기</a>
+        <a href="/board/write/" class="btn">글쓰기</a>
         <table>
         {% for list in board_list %}
-            <ul>
-                <li><a href="../view/{{list.board_id}}/">{{list.board_id}} | {{list.board_name}}</a></li>
+            <ul class="board-item">
+                <li><a href="../view/{{list.board_id}}/" class="board-link">{{list.board_id}} | {{list.board_name}}</a></li>
             </ul>
         {% endfor %}
         </table>
-    </body>
+    </div>
+</body>
 </html>
 
 {% endblock board_list %}
